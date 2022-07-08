@@ -12,7 +12,7 @@ patched
 
 original 
 
-<img src="test03.png" alt="Drawing" style="width: 250px;"/> 
+<img src="test03.jpg" alt="Drawing" style="width: 250px;"/> 
 
 patched 
 
