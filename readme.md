@@ -1,4 +1,18 @@
-### Non-overapping blocks on a image with maxmimum brightness.
+### Non-overapping blocks on a image with maxmimum brightness. The centers of those blocks are later connected to forma quadrilateral, which is shown on the image.
+
+Example cases are:
+
+original
+<img src="cat.jpg" alt="Drawing" style="width: 250px;"/> 
+
+patched
+<img src="test02_patch.png" alt="Drawing" style="width: 250px;"/>
+
+original
+<img src="test03_patch.png" alt="Drawing" style="width: 250px;"/> 
+
+patched
+<img src="test03_patch.png" alt="Drawing" style="width: 250px;"/>
 
 Solution outline: 
 The imported **image** is converted into a **grayscale image** and all the possible blocks (patches) of size 5x5 are extracted. Then, the mean values **(average brightness)** for each of the blocks are calculated and kept in a separate 2D array. That array is reshaped into a **vector** and sorted in decreasing order. The indices of the **grayscale image** are found in the order of appearance in the reshaped and sorted **vector**. Then, the first element is extracted from the **vector** and the next element in the **vector** is found (simply by iterating over the elements, since the **vector** is already sorted) with maximum mean that doesn't have an ovelapping block in the **grayscale image**. 
